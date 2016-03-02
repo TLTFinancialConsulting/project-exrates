@@ -1,20 +1,27 @@
 #!/usr/bin/env python3
 #-*- coding: utf-8 -*-
 """
+This is the module of my project, with 'unseen' functions.
 Created on Mon Aug 10 13:19:41 2015
 
 @author: Ben Longbottom-Smith
 
-COME ON YOU CAN DO IT!!! 
-
-App ID: 2a85cc08c277438ebbaf4ba4d656558c 
-
+App ID: 
 To use your App ID, append it to the API URL, eg:
 
-https://openexchangerates.org/api/latest.json?app_id=2a85cc08c277438ebbaf4ba4d656558c #{} .format(app_id, date or else)
+https://openexchangerates.org/api/latest.json?app_id= #{} .format(app_id, date or else)
 
 Write a module exrates that implements fetching, saving, and analysis of the historical 
 exchange rates. The module has to provide the following functions:
+•	_fetch_currencies() 
+•	_fetch_exrates(date) 
+•	_save_currencies(currencies) 
+•	_save_exrates(date, rates)
+•	_load_currencies() 
+•	_load_exrates(date)
+•	get_currencies() 
+•	get_exrates(date) 
+•	convert(amount, from_curr, to_curr, date) 
 """
 from pprint import pprint
 import time
@@ -26,12 +33,10 @@ import json
 import csv
 import urllib.request    # need for fetching
 
-odir = "data"     # where both files are stored
+odir = "data"     # where both files are stored, can create a folder called 'data' if it is missing
 curname = "currencies.csv"
 
 currencies_url = 'http://openexchangerates.org/api/currencies.json'
-
-
 
 ex_url = "http://openexchangerates.org/api/historical/{}.json?app_id={}"
     
